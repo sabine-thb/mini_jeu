@@ -1,0 +1,24 @@
+.flexForm, .pSubmit{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:25px;
+}
+
+.combat{
+    display:flex;
+    justify-content: center;
+    gap:30px;
+    margin-top:80px;
+
+}
+
+.img1, .img2{
+    width:200px;
+    height:200px;
+    /* background-position: center; */
+    background-size: cover;
+}
+
+
+

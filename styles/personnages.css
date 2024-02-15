@@ -1,0 +1,15 @@
+.suppr{
+    width:70px;
+    height:70px;
+    background-image: url(./img/poubelle.png);
+    background-size: cover;
+}
+
+table{
+    border-spacing: 0px;
+}
+
+td{
+    border:1px solid black;
+    text-align: center;
+}
