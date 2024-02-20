@@ -1,0 +1,18 @@
+@font-face {
+    font-family: "mario";
+    src: url(./fonts/SuperMario256.woff2) format(woff2);
+}
+@font-face {
+    font-family: "sulphur";
+    src: url(./fonts/SulphurPoint-Regular.woff2) format(woff2);
+}
+@font-face {
+    font-family: "poppins";
+    src: url(./fonts/Poppins-ExtraBold.woff2) format(woff2);
+}
+
+.mario{
+    font-family: "mario", sans-serif;
+    -webkit-text-stroke: 4px black; /* Largeur et couleur de la bordure */
+    text-shadow: 0px 7px 0px #000;
+}

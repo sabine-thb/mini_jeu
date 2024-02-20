@@ -32,6 +32,18 @@ session_start();
     </div>
 </div>
 
+
+<?php 
+if (!$_SESSION['perso1']->getPv() && !$_SESSION['perso2']->getPv()) {
+    echo "Egalité ! ". $_SESSION['perso1']->getNom() . " et " . $_SESSION['perso2']->getNom() . " sont morts.";
+} elseif (!$_SESSION['perso1']->getPv()) {
+    echo $_SESSION['perso1']->getNom() . " est mort.";
+} elseif (!$_SESSION['perso2']->getPv()) {
+    echo $_SESSION['perso2']->getNom() . " est mort.";
+}
+?>
+
+
 <div class="actions">
     <form action="traiteCombat.php" method="POST">
         <input type="hidden" name="perso1" value="<?php echo $_SESSION['perso1']->getId_perso() ?>">
