@@ -41,7 +41,7 @@
     }
 
     public function getAllPersonnages() :array{ //tableau d'objets personnages
-        $requete = "SELECT * FROM personnages";
+        $requete = "SELECT * FROM personnages ORDER BY id_perso DESC";
         $stmt = $this->db->query($requete);
         $stmt->execute();
         $personnages=[];

@@ -24,14 +24,61 @@ function imageConvertToPNG($source, $destination) {
     return false;
 }
 
-// Vérifier si une image a été uploadée
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $file = $_FILES['file'];  
+// // Vérifier si une image a été uploadée
+// if ($_SERVER["REQUEST_METHOD"] == "POST") {
+//     $file = $_FILES['file'];  
 
-    // Vérifier s'il n'y a pas d'erreur lors de l'upload
-    if($file['error'] === UPLOAD_ERR_OK) {
+//     // Vérifier s'il n'y a pas d'erreur lors de l'upload
+//     if($file['error'] === UPLOAD_ERR_OK) {
 
         
+//         // Données du nouveau personnage à partir du formulaire
+//         $data_nouveau_personnage = array(
+//             'nom' => $_POST["nom"],
+//             'pv' => $_POST["pv"],
+//             'atk' => $_POST["atk"]
+//         );
+
+//         // Création d'une instance de Personnage avec les données du formulaire
+//         $newPersonnage = new Personnage($data_nouveau_personnage);
+
+//         // Ajout du personnage à la base de données
+//         $insert_perso = $monManager->addPersonnage($newPersonnage);
+
+//         // Vérification si l'insertion du personnage a réussi
+//         if ($insert_perso !== false) {
+//             // Chemin de destination pour l'image avec l'ID du personnage
+//             $id_personnage = $monManager->getLastIdPerso();
+
+//             $new_filename = $id_personnage . ".png";
+//             $destination = "./styles/img/$new_filename";
+
+//             // Conversion de l'image au format PNG
+//             if (imageConvertToPNG($file['tmp_name'], $destination)) {
+
+//                 header('Location: newPerso.php?newPerso=ok');
+//             } else {
+//                 header('Location: newPerso.php?newPerso=err');
+//             }
+//         } else {
+//             header('Location: newPerso.php?newPerso=err');
+//         }
+//     } else {
+//         header('Location: newPerso.php?newPerso=err');
+//     }
+// }else{
+//     header('Location: newPerso.php?newPerso=err');
+// }
+
+// Taille maximale autorisée en octets (500 ko)
+$maxFileSize = 500 * 1024;
+
+// Vérifier si une image a été uploadée
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $file = $_FILES['file'];
+
+    // Vérifier s'il n'y a pas d'erreur lors de l'upload et que la taille est inférieure à la limite
+    if($file['error'] === UPLOAD_ERR_OK && $file['size'] <= $maxFileSize) {
         // Données du nouveau personnage à partir du formulaire
         $data_nouveau_personnage = array(
             'nom' => $_POST["nom"],
@@ -55,22 +102,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Conversion de l'image au format PNG
             if (imageConvertToPNG($file['tmp_name'], $destination)) {
+                header('Location: newPerso.php?newPerso=ok');
 
-                echo "Personnage créé avec succès ! L'image a été uploadée et convertie.";
             } else {
-                echo "Erreur lors de la conversion de l'image.";
+                header('Location: newPerso.php?newPerso=err');
+
             }
         } else {
-            echo "Erreur lors de l'ajout du personnage.";
+            header('Location: newPerso.php?newPerso=err');
+
         }
     } else {
-        echo "Erreur lors de l'upload de l'image.";
+        header('Location: newPerso.php?newPerso=err_size');
+
     }
-}else{
-    echo"Veuillez choisir une image.";
+} else {
+    header('Location: newPerso.php?newPerso=err');
+
 }
 
-header('Location: newPerso.php?newPerso=ok');
+
+?>
+
+
 ?>
 
 
