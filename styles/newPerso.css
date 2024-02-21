@@ -60,6 +60,7 @@ label{
     right:50%;
     bottom:40px;
     transform: translate(50%,0);
+    margin-top:15px;
 }
 
 .submit:hover{
