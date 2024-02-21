@@ -11,6 +11,7 @@ $personnages= $monManager-> getAllPersonnages();
     <title>Mini-jeu</title>
     <link href="styles/fonts.css" rel="stylesheet" />
     <link href="styles/formCombat.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/png" href="./styles/img/favicon.ico"/>
 </head>
 <body>
     <a href="index.php" class="retour">Retour</a>

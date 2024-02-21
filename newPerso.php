@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mini-jeu</title>
     <link href="./styles/fonts.css" rel="stylesheet" />  
-    <link href="./styles/newPerso.css" rel="stylesheet" />    
+    <link href="./styles/newPerso.css" rel="stylesheet" />   
+    <link rel="shortcut icon" type="image/png" href="./styles/img/favicon.ico"/> 
 </head>
 <body>
 
