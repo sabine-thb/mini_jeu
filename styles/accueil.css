@@ -29,6 +29,10 @@ body{
     bottom:-60px; 
 }
 
+.exl{
+    color:#45AF4B !important;
+}
+
 .bottom{
     height:150px;
     width:100%;
@@ -51,6 +55,7 @@ body{
     padding:5px 15px 5px 15px;
     border-radius:25px;
     transition:transform 0.3s ease-in-out;
+    box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 100);
 }
 
 .link:hover{

@@ -21,6 +21,9 @@
     if (isset($_GET['newPerso']) && $_GET['newPerso'] === 'err_size') {
         echo "<p class='msg'>La taille de votre image ne doit pas dépasser 500ko. Veuillez choisir une autre image.</p>";
     }
+    if (isset($_GET['err']) && $_GET['err'] === 'atkPv') {
+        echo "<p class='msg'>Vous devez saisir des points d'attaque et de pouvoir inférieurs à 100.</p>";
+    }
     ?>
 
     <h1 class="mario multicolor title">Ajouter un personnage :</h1>

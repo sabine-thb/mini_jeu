@@ -10,7 +10,7 @@
 
 <body>
     <div class="top">
-        <div class="multicolor mario bienvenue">Bienvenue</div>
+        <div class="multicolor mario bienvenue">Bienvenue </div>
     </div>
 
     <div class="bottom">

@@ -26,24 +26,13 @@ class Personnage {
 
 
     public function setPv($pv){
-        if($pv > 0 && $pv < 100){
+        if($pv > 0 && $pv <= 100){
             $this->pv=$pv;
         }else{
-            $this->pv=0;
-            // $this->pv=100;         
+            $this->pv=0;        
         }
     }
 
-    // public function setPv($pv) {
-    //     if ($pv >= 0 && $pv <= 100) {
-    //         $this->pv = $pv;
-    //     } elseif ($pv < 0) {
-    //         $this->pv = 0; // Mettre les points de vie à 0 si le résultat est négatif
-    //         echo "Le personnage est épuisé et perd le combat !"; // Afficher un message indiquant que le personnage a perdu
-    //     } else {
-    //         $this->pv = 100; // Les points de vie sont fixés à 100 si $pv est supérieur à 100
-    //     }
-    // }
 
 
     public function getPv(){
@@ -51,7 +40,14 @@ class Personnage {
     }
 
     public function setAtk($atk){
-        $this->atk=$atk;
+
+        if($atk > 0 && $atk<= 100){
+            $this->atk=$atk;
+        }else{
+            $this->atk=0;        
+        }
+
+        // $this->atk=$atk;
     }
     
     public function getAtk(){
@@ -122,10 +118,11 @@ class Personnage {
 
     }
 
-
     public function attaquer(Personnage $perso){
         $perso->setPv($perso->getPv()-$this->atk) ;
     }
+
+    
     
 
     public function reinitPV(Personnage $perso){

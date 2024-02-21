@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
         var text = element.textContent;
         element.textContent = ''; // Efface le contenu original
         
+        
         for (var i = 0; i < text.length; i++) {
             var char = text[i];
             var span = document.createElement('span');
@@ -21,6 +22,9 @@ document.addEventListener("DOMContentLoaded", function() {
         var colorIndex = index % colors.length;
         return colors[colorIndex];
     }
+
+
+    
 });
 
   

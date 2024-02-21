@@ -13,7 +13,7 @@ include('init.php');
 </head>
 <body>
 
-    <div class="bodyPart1">
+    <div class="bodyChild">
         <a href="index.php" class="link white">Retour</a>
         <?php 
         if(isset($_GET['suppr'])){
@@ -26,6 +26,13 @@ include('init.php');
         $personnages= $monManager-> getAllPersonnages();
         ?>
         <h1 class="mario multicolor title">personnages disponibles :</h1>
+
+        <?php 
+        if (isset($_GET['err']) && $_GET['err'] === 'atkPv') {
+        echo "<p class='msg'>Vous devez saisir des points d'attaque et de pouvoir inférieurs à 100.</p>";
+        }
+        ?>
+    
 
         <div class="gridParent">
             <div class="allCards">
@@ -110,7 +117,6 @@ include('init.php');
         
         
     </div>
-    <div class="bodyPart2"></div>
     
     
     

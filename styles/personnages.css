@@ -11,19 +11,14 @@ body{
 
 /*Je définis les background de la page*/
 
-.bodyPart1{
-    padding:30px;
-    background-color: #CFD7F3;
-}
-
-.bodyPart2{
-    width:100%;
-    height:500px;
+.bodyChild{
+    padding:60px 30px 60px 30px;
     background-image: url(./img/marioBross.png);
     background-size: cover;
     background-position: center;
-
 }
+
+
 
 /*Je m'occupe maintenant du contenu*/
 
@@ -87,16 +82,20 @@ body{
 
 .link{
     font-family: "sulphur", sans-serif;
-    font-size:1rem;
+    font-size:1.3rem;
     background-color: #646464;
     color:white;
     text-decoration: none;
     border: none;
     width:fit-content;
     border-radius:25px;
-    padding:5px 15px 5px 15px;
-    cursor: pointer;
-    
+    padding:5px 25px 5px 25px;
+    cursor: pointer;  
+    transition:padding 0.2s ease-in-out;
+}
+
+.link:hover{
+    padding:5px 30px 5px 30px;
 }
 
 .white{
